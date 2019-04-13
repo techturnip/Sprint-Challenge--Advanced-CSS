@@ -20,15 +20,35 @@
   }
 
   .space-images {
-    display: flex;
-    flex-wrap: wrap;
+    .flex-align();
     width: 100%;
 
     img {
       width: 28%;
-      margin: 20px 2.5%;
-      border-radius: 20px;
+      margin: 2rem 2.5%;
+      border-radius: 2rem;
       height: 100%;
+
+      @media @phone {
+        width: 100%;
+        margin: 2rem 4.5%;
+      }
+    }
+
+    @media @phone {
+      .blast {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      .sky {
+        display: none;
+      }
+
+      .launch {
+        display: none;
+      }
     }
   }
 
@@ -62,7 +82,22 @@
         margin-bottom: 26px;
       }
 
-      .btn {}
+      .btn {
+        padding: .8rem 2rem;
+        .button(@display: inline-block;
+        @font-size: 1.8rem);
+
+        @media @phone {
+          .flex-align();
+          width: 100%;
+          padding: 2rem 0;
+        }
+      }
+
+      @media @phone {
+        order: 2;
+        width: 100%;
+      }
     }
 
     .walk-img {
@@ -74,6 +109,18 @@
         height: auto;
         border-radius: 10px;
       }
+
+      @media @phone {
+        width: 100%;
+        order: 1;
+        padding-bottom: 2rem;
+        margin: 0;
+      }
+    }
+
+    @media @phone {
+      flex-direction: column;
+      padding: 2rem;
     }
   }
 }
