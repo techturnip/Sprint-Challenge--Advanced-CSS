@@ -1,1 +1,43 @@
 // Mixins Here
+.flex-align(@justify: center;
+@align: center;
+
+@dir: row;
+
+@wrap: wrap) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+  flex-flow: @dir @wrap;
+}
+
+.link(@color: inherit;
+@size: inherit;
+
+) {
+  color: @color;
+  text-decoration: none;
+  font-size: @size;
+
+  &:hover {
+    color: lighten(@color, 20%);
+  }
+}
+
+.button(@display: block;
+@bg: @btn-bg;
+@color: @btn-font;
+@rad: 5px;
+
+@font-size: inherit) {
+  display: @display;
+  background: @bg;
+  color: @color;
+  border-radius: @rad;
+  font-size: @font-size;
+
+  &:hover {
+    background: lighten(@bg, 20%);
+    color: darken(@color, 10%);
+  }
+}

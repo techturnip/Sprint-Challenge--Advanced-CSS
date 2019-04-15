@@ -1,1 +1,23 @@
 // Navigation code here
+.navigation {
+  position: fixed;
+  width: 100%;
+  background: @nav-bg;
+  color: @nav-font;
+  border-bottom: solid 1px @nav-border;
+  padding: 1rem 0;
+  .flex-align(@dir: column);
+
+  .navbar {
+    padding-top: 2rem;
+    .flex-align();
+
+    a {
+      .link(@nav-font, 1.8rem);
+
+      &:not(:last-child) {
+        padding-right: 3rem;
+      }
+    }
+  }
+}

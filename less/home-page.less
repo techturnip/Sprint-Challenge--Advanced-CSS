@@ -3,27 +3,53 @@
 .home {
 
   .intro {
+    padding-top: 10rem;
+
+    img {
+      border-radius: 5px;
+      width: 100%;
+    }
 
     h2 {
       padding: 15px;
     }
 
     p {
-      padding:0 15px;
+      padding: 0 15px;
     }
-  
+
   }
 
   .space-images {
-    display: flex;
-    flex-wrap: wrap;
+    .flex-align();
     width: 100%;
 
     img {
       width: 28%;
-      margin: 20px 2.5%;
-      border-radius: 20px;
+      margin: 2rem 2.5%;
+      border-radius: 2rem;
       height: 100%;
+
+      @media @phone {
+        width: 100%;
+        margin: 2rem 4.5%;
+      }
+    }
+
+    @media @phone {
+      .blast {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      .sky {
+        display: none;
+      }
+
+      .launch {
+        display: none;
+      }
     }
   }
 
@@ -58,18 +84,88 @@
       }
 
       .btn {
+        padding: .8rem 2rem;
+        .button(@display: inline-block;
+        @font-size: 1.8rem);
+
+        @media @phone {
+          .flex-align();
+          width: 100%;
+          padding: 2rem 0;
+        }
+      }
+
+      @media @phone {
+        order: 2;
+        width: 100%;
       }
     }
 
     .walk-img {
       width: 46%;
       margin-left: 4%;
-      
+
       img {
         width: 100%;
         height: auto;
         border-radius: 10px;
       }
+
+      @media @phone {
+        width: 100%;
+        order: 1;
+        padding-bottom: 2rem;
+        margin: 0;
+      }
+    }
+
+    @media @phone {
+      flex-direction: column;
+      padding: 2rem;
     }
   }
-}// home
+}
+
+// home
+
+.newsletter {
+  background: @newsletter-bg;
+  padding: 5rem 0;
+  margin-top: 5rem;
+
+  .sign-up {
+    width: 100%;
+    .flex-align(@dir: column);
+
+    form {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+
+      .form-label {
+        margin-right: 1rem;
+        font-size: 1.8rem;
+      }
+
+      input {
+        padding: .8rem 2rem;
+        border-radius: 5px;
+        border: solid 1px @btn-bg-color;
+      }
+
+      .submit-btn {
+        padding: .8rem 2rem;
+        .button(@display: inline-block;
+        @font-size: 1.8rem);
+        border: none;
+        cursor: pointer;
+
+        @media @phone {
+          .flex-align();
+          width: 100%;
+          padding: 2rem 0;
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
